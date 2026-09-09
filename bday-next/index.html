@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#d4111e" />
+  <title>A Letter, Just For You</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <div class="sparkles" id="sparkles"></div>
+
+    <!-- PART 1: Opening heart -->
+    <section class="screen active intro" id="intro">
+      <div class="intro-center">
+        <button class="opening-heart" id="openLetter" aria-label="Open your surprise">
+          <span class="opening-heart__pulse"></span>
+          <span class="opening-heart__icon">❤</span>
+        </button>
+        <p class="opening-hint">Tap the heart</p>
+      </div>
+    </section>
+
+    <!-- PART 1: Small centered letter -->
+    <section class="screen letter-screen" id="letterScreen">
+      <div class="letter-scene">
+        <h1 class="letter-title">A Letter, Just For You</h1>
+        <p class="letter-subtitle">Tap the envelope to reveal it</p>
+
+        <button class="envelope" id="envelopeBtn" aria-label="Open letter">
+          <span class="envelope-shadow"></span>
+          <span class="paper-preview">
+            <b>Happy Birthday 🎉</b><br>
+            Just for you, my cutie!<br>
+            I pray you achieve all<br>
+            your dreams, stay happy<br>
+            and keep smiling the way<br>
+            you do. 💗
+          </span>
+          <span class="envelope-back"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-heart">❤</span>
+        </button>
+
+        <p class="for-you">For You, My Cutie</p>
+        <span class="tap-open">TAP TO OPEN IT</span>
+      </div>
+    </section>
+
+    <!-- PART 2: The envelope opens into a small handwritten letter -->
+    <section class="screen opened-letter-screen" id="modalScreen">
+      <div class="opened-letter-wrap">
+        <div class="letter-glow"></div>
+        <article class="opened-letter" id="openedLetter">
+          <button class="close-letter" id="closeModal" aria-label="Go back">‹</button>
+          <div class="letter-top">
+            <span class="mini-heart">♥</span>
+            <p>FOR MY FAVORITE PERSON</p>
+          </div>
+          <div class="letter-copy">
+            <h2>Happy Birthday,<br><em>My Cutie</em> ♡</h2>
+            <p>Just a little letter to remind you how special you are to me.</p>
+            <p>May your days be full of happiness, your heart stay peaceful, and your beautiful smile never fade. You deserve every lovely thing life has waiting for you. ✨</p>
+            <p class="letter-sign">With lots of love,<br><strong>Someone who cares 💗</strong></p>
+          </div>
+          <div class="letter-bottom-heart">♥</div>
+        </article>
+        <button class="continue-surprise" id="continueBtn">Continue the surprise <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- PART 3: Birthday passcode / DOB unlock -->
+    <section class="screen lock-screen" id="lockScreen">
+      <div class="lock-orbit orbit-a"></div><div class="lock-orbit orbit-b"></div>
+      <div class="lock-card">
+        <div class="lock-heart">♥</div>
+        <div class="lock-title-icon"><span>⌁</span></div>
+        <h2>A Tiny Secret</h2>
+        <p class="lock-sub">Enter your birthday to unlock<br>the next little surprise</p>
+        <div class="date-display" aria-live="polite"><span id="dateText">DD&nbsp;&nbsp;MM&nbsp;&nbsp;YY</span></div>
+        <div class="dots" id="dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="keypad-wrap"><div class="keypad" id="keypad"></div></div>
+        <p class="key-hint">Hint: the day that brought you into this world ♡</p>
+      </div>
+    </section>
+    <!-- PART 4: Interactive cake cutting scene -->
+    <section class="screen cake-screen" id="cakeScreen">
+      <div class="cake-content">
+        <div class="cake-top-heart">♥</div>
+        <p class="cake-eyebrow">ONE MORE LITTLE SURPRISE</p>
+        <h1>Make a wish,<br><em>then cut the cake</em></h1>
+        <p class="cake-instruction" id="cakeInstruction">Drag your finger across the cake ✦</p>
+        <div class="cake-stage" id="cakeStage" aria-label="Drag across the cake to cut it">
+          <div class="cake-shadow"></div>
+          <div class="cake-slice cake-left"><div class="frosting"></div><div class="cake-body"><i></i><i></i><i></i></div></div>
+          <div class="cake-slice cake-right"><div class="frosting"></div><div class="cake-body"><i></i><i></i><i></i></div></div>
+          <div class="cake-cream cream-a"></div><div class="cake-cream cream-b"></div><div class="cake-cream cream-c"></div>
+          <div class="candle"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></div>
+          <div class="cut-guide" id="cutLine"><span>SWIPE</span></div>
+          <div class="knife" id="knife" aria-hidden="true">🔪</div>
+          <div class="cake-confetti" id="cakeConfetti"></div>
+        </div>
+        <h2 id="cakeMessage">Your wish is safe with me ♡</h2>
+        <button class="soft-btn" id="memoriesBtn">Continue <span>→</span></button>
+      </div>
+    </section>
+    <!-- PART 5: Mobile-first memories carousel -->
+    <section class="screen memories-screen" id="memoriesScreen">
+      <div class="memories-content">
+        <div class="memory-heart">♥</div>
+        <p class="memory-eyebrow">A LITTLE WALK DOWN MEMORY LANE</p>
+        <h1>Our Special<br><em>Memories</em> ✨</h1>
+        <p class="memory-sub">Swipe gently through these little moments ♡</p>
+        <div class="cards" id="cards">
+          <article class="memory-card card-1">
+            <div class="memory-photo"><img src="assets/memory1.jpg" alt="Special memory 1"></div>
+            <div class="memory-copy"><span>01 / 03</span><h3>That First Smile</h3><p>A little moment, a forever memory 💕</p></div>
+          </article>
+          <article class="memory-card card-2">
+            <div class="memory-photo"><img src="assets/memory2.jpg" alt="Special memory 2"></div>
+            <div class="memory-copy"><span>02 / 03</span><h3>Our Best Days</h3><p>Every laugh became a memory worth keeping ✨</p></div>
+          </article>
+          <article class="memory-card card-3">
+            <div class="memory-photo"><img src="assets/memory3.jpg" alt="Special memory 3"></div>
+            <div class="memory-copy"><span>03 / 03</span><h3>Always Us</h3><p>And hopefully, many more beautiful memories to come 💗</p></div>
+          </article>
+        </div>
+        <div class="memory-dots" id="memoryDots"><i class="active"></i><i></i><i></i></div>
+        <button class="memory-next" id="finalBtn">One last thing <span>→</span></button>
+      </div>
+    </section>
+    <!-- FINAL: Last surprise -->
+    <section class="screen final-screen" id="finalScreen">
+      <div class="final-glow"></div>
+      <div class="final-hearts" id="finalHearts"></div>
+      <div class="final-content">
+        <div class="final-seal">♥</div>
+        <p class="final-eyebrow">ONE LAST THING</p>
+        <div class="final-photo-frame"><img src="assets/memory2.jpg" alt="A special memory"></div>
+        <h1>Happy Birthday,<br><em>my favorite person</em> ♡</h1>
+        <p class="final-note">May this new chapter bring you endless smiles, beautiful moments, and everything your heart wishes for. Keep shining, keep smiling — you deserve it all. ✨</p>
+        <button class="replay-btn" id="replayBtn">Replay our little story <span>↻</span></button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
